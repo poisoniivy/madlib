@@ -35,7 +35,19 @@
             {% for adjective in adjectives %}
                 <option value="{{ adjective }}">{{ adjective }}</option>
             {% endfor %}
-        </select> <br><br>
+        </select> <br>
+
+        Pick a place:
+        {% for place in places %}
+            <input type="radio" name="place" value="{{ place }}">{{ place }}</input>
+        {% endfor %}
+        <br>
+
+        Pick a food:
+        {% for food in foods %}
+            <input type="checkbox" name="food" value="{{ food }}">{{ food }}</input>
+        {% endfor %}
+        <br>
         <input type="submit" value="Madlib me!"></input>
     </form>
         

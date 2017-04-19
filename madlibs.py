@@ -26,6 +26,13 @@ THINGS = [
     "iPhone", "pants", "snowboard", "cup"
 ]
 
+PLACES = [
+    "London", "Paris", "Mars", "San Francisco",
+]
+
+FOODS = [
+    "Pizza", "Hot Dogs", "Jello",
+]
 
 @app.route('/')
 def start_here():
@@ -66,7 +73,8 @@ def show_madlib_form():
         return render_template("goodbye.html")
     else:
         return render_template("game.html", adjectives=AWESOMENESS, 
-            people=PEOPLE, colors=COLORS, nouns=THINGS)
+            people=PEOPLE, colors=COLORS, nouns=THINGS,
+            places=PLACES, foods=FOODS)
 
 @app.route('/madlib')
 def show_madlib():
@@ -74,8 +82,17 @@ def show_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
+    place = request.args.get("place")
+    # pizza = request.args.get("Pizza")
+    # hotdog = request.args.get("Hot Dogs")
+    # jello = request.args.get("Jello")
+    food_list = request.args.getlist("food")
+    # print pizza, hotdog, jello
+    print food_list
+
+
     return render_template("madlib.html", person=name, color=color, noun=noun,
-        adjective=adjective)
+        adjective=adjective, place=place, foods=food_list)
 
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also
