@@ -34,14 +34,19 @@ FOODS = [
     "Pizza", "Hot Dogs", "Jello",
 ]
 
+MADLIBS = [
+    "madlib.html", "madlib2.html",
+]
+
 @app.route('/')
 def start_here():
-    """Display homepage."""
+    return say_hello()
+    # """Display homepage."""
 
-    return """
-    Hi! This is the home page.
-    <a href="/hello">Click here!</a>
-    """
+    # return """
+    # Hi! This is the home page.
+    # <a href="/hello">Click here!</a>
+    # """
 
 
 @app.route('/hello')
@@ -91,7 +96,7 @@ def show_madlib():
     print food_list
 
 
-    return render_template("madlib.html", person=name, color=color, noun=noun,
+    return render_template(choice(MADLIBS), person=name, color=color, noun=noun,
         adjective=adjective, place=place, foods=food_list)
 
 if __name__ == '__main__':

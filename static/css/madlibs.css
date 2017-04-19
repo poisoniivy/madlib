@@ -1,0 +1,27 @@
+/*<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">*/
+
+form {
+    font-family: 'Raleway', sans-serif;
+    /*font-family: Arial;*/
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;    
+}
+
+.submit {
+    font-family: 'Raleway', sans-serif;    
+}
+
+p {
+    font-family: 'Raleway', sans-serif;    
+}
+
+select {
+    font-family: 'Raleway', sans-serif;    
+}
+
+div {
+    text-align: center;
+    margin-top: 250px;
+}

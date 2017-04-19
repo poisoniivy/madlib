@@ -1,11 +1,19 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
   <title>Madlib Story</title>
 </head>
 <body>
-    There once was a {{ color }} {{ noun }} sitting in {{ place }}.
-When {{ person }} went to pick up {% for food in foods %}{{ food }}{% endfor %}, it burst into flames in a totally
-{{ adjective }} way.
+
+    <p>There once was a {{ color }} {{ noun }} sitting in {{ place }}.
+When {{ person }} went to pick up {% for food in foods %} {{ food }}, {% endfor %}it burst into flames in a totally {{ adjective }} way.</p>
 </body>
 </html>
+ -->
+{% extends 'base.html' %}
+{% block title %}Our Madlib Story{% endblock %}
+
+{% block content %}
+<p>There once was a {{ color }} {{ noun }} sitting in {{ place }}.
+When {{ person }} went to pick up {% for food in foods %} {{ food }}, {% endfor %}it burst into flames in a totally {{ adjective }} way.</p>
+{% endblock %}

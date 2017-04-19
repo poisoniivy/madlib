@@ -1,9 +1,8 @@
-<!doctype html>
-<html>
-<head>
-  <title>Our Madlib Game!</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Our Madlib Game!{% endblock %}
+
+{% block content %}
+
    <form action="/madlib">
         Pick a person:
         <select name="name">
@@ -11,7 +10,7 @@
             {% for person in people %}
                 <option value="{{ person }}">{{ person }}</option>
             {% endfor %}
-        </select><br>
+        </select><br><br>
         
         Pick a color:
         <select name="color">
@@ -19,7 +18,7 @@
             {% for color in colors %}
                 <option value="{{ color }}">{{ color }}</option>
             {% endfor %}
-        </select><br>
+        </select><br><br>
 
         Pick a noun:
         <select name="noun">
@@ -27,7 +26,7 @@
             {% for noun in nouns %}
                 <option value="{{ noun }}">{{ noun }}</option>
             {% endfor %}
-        </select><br>
+        </select><br><br>
 
         Pick an adjective:
         <select name="adjective">
@@ -35,21 +34,20 @@
             {% for adjective in adjectives %}
                 <option value="{{ adjective }}">{{ adjective }}</option>
             {% endfor %}
-        </select> <br>
+        </select> <br><br>
 
         Pick a place:
         {% for place in places %}
             <input type="radio" name="place" value="{{ place }}">{{ place }}</input>
         {% endfor %}
-        <br>
+        <br><br>
 
         Pick a food:
         {% for food in foods %}
             <input type="checkbox" name="food" value="{{ food }}">{{ food }}</input>
         {% endfor %}
-        <br>
-        <input type="submit" value="Madlib me!"></input>
+        <br><br>
+        <input type="submit" value="Madlib me!" class="submit"></input>
     </form>
         
-</body>
-</html>
+{% endblock %}

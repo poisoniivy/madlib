@@ -1,16 +1,31 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
-  <title>Hi There!</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Hi There!</title>
+    {% block madlibs_style %}<link rel="stylesheet" href="/static/css/madlibs.css">{% endblock %}
 </head>
 <body>
 
 <h1>Hi There!</h1>
 
+
 <form action="/greet">
   What is your name? <input type="text" name="person">
-  <input type="submit">
+  <input type="submit" id="hellosubmit">
 </form>
 
 </body>
 </html>
+ -->
+{% extends 'base.html' %}
+{% block title %}Hi There!{% endblock %}
+
+{% block content %}
+<h1>Hi There!</h1>
+
+<form action="/greet">
+  What is your name? <input type="text" name="person">
+  <input type="submit" class="submit">
+</form>
+{% endblock %}
