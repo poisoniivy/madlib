@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <title>Our Madlib Game!</title>
+</head>
+<body>
+   <form action="/madlib">
+        Pick a person:
+        <select name="name">
+            <option value= " " disaable selected> Pick a person</option>
+            {% for person in people %}
+                <option value="{{ person }}">{{ person }}</option>
+            {% endfor %}
+        </select><br>
+        
+        Pick a color:
+        <select name="color">
+            <option value= " " disaable selected> Pick a color</option>
+            {% for color in colors %}
+                <option value="{{ color }}">{{ color }}</option>
+            {% endfor %}
+        </select><br>
+
+        Pick a noun:
+        <select name="noun">
+            <option value= " " disaable selected> Pick a noun</option>
+            {% for noun in nouns %}
+                <option value="{{ noun }}">{{ noun }}</option>
+            {% endfor %}
+        </select><br>
+
+        Pick an adjective:
+        <select name="adjective">
+            <option value= " " disaable selected> Pick an adjective</option>
+            {% for adjective in adjectives %}
+                <option value="{{ adjective }}">{{ adjective }}</option>
+            {% endfor %}
+        </select> <br><br>
+        <input type="submit" value="Madlib me!"></input>
+    </form>
+        
+</body>
+</html>
